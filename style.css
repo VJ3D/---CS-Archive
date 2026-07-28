@@ -1,0 +1,190 @@
+/* الألوان الأساسية والمتغيرات */
+:root {
+    --bg-color: #f7f5f0;          /* بيجي فاتح ناعم */
+    --card-bg: #ffffff;           /* أبيض للبطاقات لتمييزها */
+    --primary-color: #556b2f;      /* أخضر زيتوني داكن (Olive Green) */
+    --primary-hover: #3b4a20;      /* أخضر زيتوني أغمق للتفاعل */
+    --accent-color: #e2dcce;       /* بيجي أغمق للحدود والتفاصيل */
+    --text-main: #2b2b2b;          /* رمادي غامق جداً للنصوص */
+    --text-muted: #666666;         /* رمادي للملاحظات */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* الشريط العلوي */
+.navbar {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: var(--accent-color);
+}
+
+/* القسم الرئيسي */
+.main-content {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.hero {
+    background-color: var(--accent-color);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 35px;
+    border: 1px solid #d4cebe;
+}
+
+.hero h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* شبكة البطاقات */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* تصميم البطاقة */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(85, 107, 47, 0.12);
+}
+
+.card.disabled {
+    opacity: 0.6;
+}
+
+.card-tag {
+    align-self: flex-start;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* الأزرار */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-disabled {
+    background-color: #ccc;
+    color: #666;
+    border: none;
+    cursor: not-allowed;
+}
+
+/* الفوتر */
+.footer {
+    background-color: var(--accent-color);
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    border-top: 1px solid #d4cebe;
+}
